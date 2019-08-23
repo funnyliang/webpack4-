@@ -1,4 +1,5 @@
 import * as React from 'react';
+// import * as ReactDom from 'react-dom';
 
 interface props {
   color: string
@@ -29,4 +30,4 @@ class App extends React.Component<props, state> {
 
 }
 
-export default App;
+export default App

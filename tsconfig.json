@@ -1,25 +1,35 @@
 {
   "compilerOptions": {
-    "target": "es5",
-    "lib": [
-      "dom",
-      "dom.iterable",
-      "esnext"
-    ],
-    "allowJs": true,
-    "skipLibCheck": true,
-    "esModuleInterop": true,
-    "allowSyntheticDefaultImports": true,
-    "strict": true,
-    "forceConsistentCasingInFileNames": true,
+    "declaration": true,
+    "baseUrl": ".",
+    // "paths": {
+    //   "utils/*": ["include/utils/*"],
+    //   "stylesheets": ["stylesheets/"],
+    //   "examples": ["examples/"]
+    // },
+    // "rootDirs": ["include"],
+    "outDir": "dist",
     "module": "esnext",
+    "target": "es5",
+    "lib": ["es6", "dom"],
+    "sourceMap": true,
+    "jsx": "react",
     "moduleResolution": "node",
-    "resolveJsonModule": true,
-    "isolatedModules": true,
-    "noEmit": true,
-    "jsx": "preserve"
+    "rootDir": ".",
+    "forceConsistentCasingInFileNames": true,
+    "noImplicitReturns": true,
+    "noImplicitThis": true,
+    "noImplicitAny": true,
+    "importHelpers": true,
+    "strictNullChecks": true,
+    "esModuleInterop": true,
+    "noUnusedLocals": true
   },
-  "include": [
-    "src"
+  "include": [  // 所需要用ts的文件
+    "src",
+  ],
+  "exclude": [  //排除文件
+    "node_modules",
+    
   ]
 }

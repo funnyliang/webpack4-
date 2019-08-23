@@ -10,7 +10,10 @@ module.exports = {
   mode: 'production',
   // devtool: "inline-source-map",
   entry: {
-    index: './src/index.js'
+    index: [
+      'react-hot-loader/patch',
+      path.join(__dirname, './src/index.js')
+    ]
   },
   output: {
     filename: '[name].bundle.js',
@@ -26,6 +29,10 @@ module.exports = {
   module: {
     rules: [
       {
+        test: /\.js$/,
+        loader: "babel-loader"
+    },
+      {
         test: /\.jsx?$/,
         use: [
           {
@@ -33,14 +40,14 @@ module.exports = {
           }
         ]
       },
-      
+      { test: /\.tsx?$/, loader: "ts-loader" },
       {
         test: /\.css$/,
         use: [
           // 'style-loader',
           MiniCssExtractPlugin.loader,
           'css-loader',
-          'postcss-loader'
+          // 'postcss-loader'
         ]
       }
     ]
@@ -71,6 +78,7 @@ module.exports = {
     }
 },
   devServer: {
+    hot: true,
     contentBase: '/',
     compress: true,
     port: 9000,
