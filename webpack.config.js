@@ -7,7 +7,7 @@ const UglifyJsPlugin=require('uglifyjs-webpack-plugin')
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 
 module.exports = {
-  mode: 'production',
+  mode: 'development',
   // devtool: "inline-source-map",
   entry: {
     index: [

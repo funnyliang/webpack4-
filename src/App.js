@@ -25,7 +25,7 @@ function App() {
   return (
     <Router>
       <ul>
-        <li> <Link to="/">首</Link> </li>
+        <li> <Link to="/">首页</Link> </li>
         {
           list.map((item, index) => {
             return (
